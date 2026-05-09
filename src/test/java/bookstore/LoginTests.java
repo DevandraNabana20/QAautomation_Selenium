@@ -44,7 +44,7 @@ public class LoginTests  extends BaseTest {
         Assert.assertTrue(loginPage.verifyLoginFailed(),
                 "User should be able to see the error message after logging in with invalid credentials");
 
-        logger.info("testLoginFailed sudah dijalankan dengan sukses");
+        logger.info("TestLoginFailed sudah dijalankan dengan suksess");
     }
 
 }
