@@ -42,6 +42,7 @@ tasks.test {
             systemProperty("env", project.property("env") as String)
         }
     }
+//    maxParallelForks = Runtime.getRuntime().availableProcessors().coerceAtMost(2)
     testLogging {
         events("passed", "skipped", "failed", "standardOut", "standardError")
         showExceptions = true
@@ -49,4 +50,7 @@ tasks.test {
         showStackTraces = true
         exceptionFormat = org.gradle.api.tasks.testing.logging.TestExceptionFormat.FULL
     }
+
+
 }
+
