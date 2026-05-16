@@ -14,7 +14,7 @@ public class CheckoutStepTwoPage extends BasePage {
     @FindBy(xpath = "//span[@class='title']")
     private WebElement pageTitle;
 
-    @FindBy(xpath = "//button[@id='finish']")
+    @FindBy(id = "finish")
     private WebElement finishButton;
 
     public CheckoutStepTwoPage(WebDriver driver) {

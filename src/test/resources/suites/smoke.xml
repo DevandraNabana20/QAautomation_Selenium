@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
-<suite name="SmokeTestSuite" verbose="1" parallel="none">
+<suite name="SmokeTestSuite" verbose="1" parallel="tests" thread-count="3">
 
     <!--    Saya pakai parallel. Untuk Retry analizer saya hapus supaya tidak bentrok-->
     <listeners>
@@ -34,7 +34,7 @@
         <groups>
             <run>
                 <include name="smoke"/>
-                <exclude name="p2"/>
+<!--                <exclude name="p2"/>-->
             </run>
         </groups>
         <classes>
@@ -44,4 +44,5 @@
             <class name="saucedemo.CheckoutTests"/>
         </classes>
     </test>
+
 </suite>

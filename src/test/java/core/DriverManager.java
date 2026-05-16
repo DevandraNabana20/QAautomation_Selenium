@@ -40,7 +40,14 @@ public class DriverManager {
 
                 ChromeOptions options = new ChromeOptions();
 
+                // Disable password save popup, leak detection, and autofill
+                java.util.Map<String, Object> prefs = new java.util.HashMap<>();
+                prefs.put("profile.password_manager_leak_detection", false);
+                prefs.put("credentials_enable_service", false);
+                prefs.put("profile.password_manager_enabled", false);
+                options.setExperimentalOption("prefs", prefs);
 
+                options.addArguments("--disable-features=PasswordLeakDetection");
                 options.addArguments("--disable-blink-features=AutomationControlled");
                 options.addArguments("--disable-web-resources");
                 options.addArguments("--disable-extensions");

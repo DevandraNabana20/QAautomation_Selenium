@@ -14,16 +14,16 @@ public class CheckoutStepOnePage extends BasePage {
     @FindBy(xpath = "//span[@class='title']")
     private WebElement pageTitle;
 
-    @FindBy(css = "#first-name")
+    @FindBy(id = "first-name")
     private WebElement firstNameInput;
 
-    @FindBy(css = "#last-name")
+    @FindBy(id = "last-name")
     private WebElement lastNameInput;
 
-    @FindBy(css = "#postal-code")
+    @FindBy(id = "postal-code")
     private WebElement postalCodeInput;
 
-    @FindBy(css = "#continue")
+    @FindBy(id = "continue")
     private WebElement continueButton;
 
     public CheckoutStepOnePage(WebDriver driver) {
