@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
+import java.io.File;
+
 
 public class DriverManager {
 
@@ -40,19 +42,23 @@ public class DriverManager {
 
                 ChromeOptions options = new ChromeOptions();
 
-                // Disable password save popup, leak detection, and autofill
+
+
+                // Disable password save popup, leak detection, autofill, and notifications
                 java.util.Map<String, Object> prefs = new java.util.HashMap<>();
                 prefs.put("profile.password_manager_leak_detection", false);
                 prefs.put("credentials_enable_service", false);
                 prefs.put("profile.password_manager_enabled", false);
                 options.setExperimentalOption("prefs", prefs);
-
-                options.addArguments("--disable-features=PasswordLeakDetection");
+                //ads popupblokier google vignete
+                options.addArguments("--host-rules=MAP *.doubleclick.net 127.0.0.1, MAP *.googlesyndication.com 127.0.0.1");
+                options.addArguments("--disable-features=PasswordLeakDetection,PrivacySandboxSettings4");
                 options.addArguments("--disable-blink-features=AutomationControlled");
                 options.addArguments("--disable-web-resources");
-                options.addArguments("--disable-extensions");
                 options.addArguments("--disable-plugins");
                 options.addArguments("--disable-component-extensions-with-background-pages");
+                options.addArguments("--disable-popup-blocking");
+                options.addArguments("--disable-notifications");
                 options.setExperimentalOption("useAutomationExtension", false);
                 options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
 

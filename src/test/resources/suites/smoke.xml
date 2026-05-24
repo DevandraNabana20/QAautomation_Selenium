@@ -7,42 +7,64 @@
         <!-- (RETRY)       <listener class-name="core.RetryListener"/>-->
     </listeners>
     <parameter name="browser" value="chrome"/>
-    <!--    <test name="BookstoreLoginTests">-->
-    <!--        <groups>-->
-    <!--            <run>-->
-    <!--                <include name="smoke"/>-->
-    <!--                <exclude name="p2"/>-->
-    <!--            </run>-->
-    <!--        </groups>-->
-    <!--        <classes>-->
-    <!--            <class name="bookstore.LoginTests"/>-->
-    <!--        </classes>-->
-    <!--    </test>-->
-    <!--    <test name="BookstoreHomePageTests">-->
-    <!--        <groups>-->
-    <!--            <run>-->
-    <!--                <include name="smoke"/>-->
-    <!--                <exclude name="p2"/>-->
-    <!--            </run>-->
-    <!--        </groups>-->
-    <!--        <classes>-->
-    <!--            <class name="bookstore.HomePageTests"/>-->
-    <!--        </classes>-->
-    <!--    </test>-->
-
-    <test name="LoginTests">
+        <test name="BookstoreLoginTests">
+            <groups>
+                <run>
+                    <include name="smoke"/>
+                    <exclude name="p2"/>
+                </run>
+            </groups>
+            <classes>
+                <class name="bookstore.LoginTests"/>
+            </classes>
+        </test>
+        <test name="BookstoreHomePageTests">
+            <groups>
+                <run>
+                    <include name="smoke"/>
+                    <exclude name="p2"/>
+                </run>
+            </groups>
+            <classes>
+                <class name="bookstore.HomePageTests"/>
+            </classes>
+        </test>
+    <test name="CartTests">
         <groups>
             <run>
                 <include name="smoke"/>
-<!--                <exclude name="p2"/>-->
+                <exclude name="p2"/>
             </run>
         </groups>
         <classes>
-            <class name="saucedemo.LoginTests"/>
-            <class name="saucedemo.InventoryTests"/>
-            <class name="saucedemo.CartTests"/>
-            <class name="saucedemo.CheckoutTests"/>
+            <class name="bookstore.CartTests"/>
         </classes>
     </test>
+    <test name="CheckoutTests">
+        <groups>
+            <run>
+                <include name="smoke"/>
+                <exclude name="p2"/>
+            </run>
+        </groups>
+        <classes>
+            <class name="bookstore.CheckoutTests"/>
+        </classes>
+    </test>
+
+<!--    <test name="LoginTests">-->
+<!--        <groups>-->
+<!--            <run>-->
+<!--                <include name="smoke"/>-->
+<!--&lt;!&ndash;                <exclude name="p2"/>&ndash;&gt;-->
+<!--            </run>-->
+<!--        </groups>-->
+<!--        <classes>-->
+<!--            <class name="saucedemo.LoginTests"/>-->
+<!--            <class name="saucedemo.InventoryTests"/>-->
+<!--            <class name="saucedemo.CartTests"/>-->
+<!--            <class name="saucedemo.CheckoutTests"/>-->
+<!--        </classes>-->
+<!--    </test>-->
 
 </suite>
