@@ -44,9 +44,6 @@ public class DriverManager {
                 options.addArguments("--host-rules=MAP *.doubleclick.net 127.0.0.1, MAP *.googlesyndication.com 127.0.0.1");
                 options.addArguments("--disable-features=PasswordLeakDetection,PrivacySandboxSettings4");
                 options.addArguments("--disable-blink-features=AutomationControlled");
-                options.addArguments("--disable-web-resources");
-                options.addArguments("--disable-plugins");
-                options.addArguments("--disable-component-extensions-with-background-pages");
                 options.addArguments("--disable-popup-blocking");
                 options.addArguments("--disable-notifications");
                 options.setExperimentalOption("useAutomationExtension", false);
@@ -69,9 +66,6 @@ public class DriverManager {
                     options.addArguments("--window-size=1920,1080");
                     options.addArguments("--no-sandbox");
                     options.addArguments("--disable-dev-shm-usage");
-                    options.addArguments("--disable-setuid-sandbox");
-                    options.addArguments("--remote-debugging-port=9222");
-                    options.addArguments("--disable-software-rasterizer");
                     options.addArguments("--remote-allow-origins=*");
                     System.out.println("Headless mode enabled with CI-specific options");
                 } else {
