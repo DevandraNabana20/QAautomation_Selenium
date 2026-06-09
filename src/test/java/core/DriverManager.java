@@ -27,18 +27,8 @@ public class DriverManager {
                 System.out.println("Running in CI: " + isCI);
 
 
-                if (!isCI) {
-                    System.out.println("Setting up ChromeDriver via WebDriverManager");
-                    WebDriverManager.chromedriver().setup();
-                } else {
-                    System.out.println("Using pre-installed ChromeDriver from CI");
-                    String chromeDriverPath = System.getenv("CHROMEDRIVER_PATH");
-                    if (chromeDriverPath != null && !chromeDriverPath.isEmpty()) {
-                        System.setProperty("webdriver.chrome.driver", chromeDriverPath);
-                        System.out.println("ChromeDriver path set to: " + chromeDriverPath);
-                    }
-                }
-
+                System.out.println("Setting up ChromeDriver via WebDriverManager");
+                WebDriverManager.chromedriver().setup();
 
                 ChromeOptions options = new ChromeOptions();
 
